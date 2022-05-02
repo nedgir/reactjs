@@ -3,10 +3,13 @@ import { Dateformat } from "../Utility/Dateformat";
 import "./Home.css";
 export default function Home(props) {
   return (
-    <div>
-      <div className="div1">{props.hobby}
+
+    <div className="card div1">
+      <div className="card-body">id: {props.id}
       </div>
-      <div className="div1">
+      <div className="card-text div1">Hobbie: {props.hobby}
+      </div>
+      <div className="card-footer div1">
         Start date: <Dateformat dt={props.dt} />
       </div>
       

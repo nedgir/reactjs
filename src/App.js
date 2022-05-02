@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import './App.css';
+import Login from './components/Login';
 import Home from './components/Home';
 import { Inputform } from './components/Inputform';
 
 function App() {
   var dummydata = [
-    {hobby:"chess",dt:new Date(2000,1,21)},
-    {hobby:"badminton",dt:new Date(2005,2,2)},
-    {hobby:"watching movies",dt:new Date(2001,3,24)}
+    {id:1,hobby:"chess",dt:new Date(2000,1,21)},
+    {id:2,hobby:"badminton",dt:new Date(2005,2,2)},
+    {id:3,hobby:"watching movies",dt:new Date(2001,3,24)}
   ];
   const [hobbies,setHobbies] = useState(dummydata);
   function addHobbyMethod(hobby){
@@ -18,8 +19,9 @@ function App() {
   return (
     <div className="form-control">
       <h2>{title}</h2>
-     <Inputform addHobby = {addHobbyMethod} />
-     {hobbies.map(data => <Home hobby={data.hobby} dt = {data.dt}/>) }
+      <Login/>
+     {/* <Inputform addHobby = {addHobbyMethod} />
+     {hobbies.map(data => <Home key={data.id} id={data.id} hobby={data.hobby} dt = {data.dt}/>) } */}
     </div>
   );
 }

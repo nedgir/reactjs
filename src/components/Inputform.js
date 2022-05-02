@@ -13,7 +13,7 @@ setTitle(titleInput);
     }
     function addHobby(event){
         event.preventDefault();
-        var newhobby = {hobby:title,dt:new Date(dt)};
+        var newhobby = {id:Math.floor(Math.random()*101),hobby:title,dt:new Date(dt)};
         props.addHobby(newhobby);
     }
     
