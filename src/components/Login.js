@@ -17,6 +17,9 @@ const Login = (props) => {
   const emailValidatorEvent = () => {
     setEmailValidator(email.includes("@"));
   };
+  const passwordValidatorEvent = () =>{
+      setPasswordValidator(password.trim().length>7);
+  }
 
   return (
     <Card className={classes.login}>
@@ -35,14 +38,14 @@ const Login = (props) => {
             onBlur={emailValidatorEvent}
           />
         </div>
-        <div className={classes.control}>
+        <div className={`${classes.control} ${passwordValidator == false ? classes.invalid:""}`}>
           <label htmlFor="password">Password</label>
           <input
             type="password"
             value={password}
             id="password"
             onChange={passwordChangeHandler}
-            onBlur={passwordValidator}
+            onBlur={passwordValidatorEvent}
           />
         </div>
         <div className={classes.actions}>
