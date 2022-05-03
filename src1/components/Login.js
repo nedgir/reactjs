@@ -21,9 +21,15 @@ const Login = (props) => {
       setPasswordValidator(password.trim().length>7);
   }
 
+  const submitHandler = (event) =>{
+      event.preventDefault();
+      console.log(event);
+      props.onLogin(email,password);
+  }
+
   return (
     <Card className={classes.login}>
-      <form>
+      <form onSubmit={submitHandler}>
         <div
           className={`${classes.control} ${
             emailValidator == false ? classes.invalid : ""
@@ -49,7 +55,8 @@ const Login = (props) => {
           />
         </div>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn}>Login</Button>
+          <Button btntype="submit" className={classes.btn}>Login</Button>
+          {/* <button type="submit">Login</button> */}
         </div>
       </form>
     </Card>

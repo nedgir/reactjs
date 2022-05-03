@@ -3,7 +3,7 @@ import React from 'react'
 const Button = (props) => {
   return (
     <button
-    type='button'
+    type={props.btntype}
     onClick={props.onClick}>{props.children}</button>
   )
 }
